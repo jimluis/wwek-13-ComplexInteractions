@@ -109,6 +109,8 @@ GameObject:
   - component: {fileID: 6619494126196787065}
   - component: {fileID: 6619494126196787064}
   - component: {fileID: 6716157003661049397}
+  - component: {fileID: 8020842786491192883}
+  - component: {fileID: 5707686850327364694}
   m_Layer: 0
   m_Name: SliderControl
   m_TagString: Untagged
@@ -885,7 +887,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1433
+  m_VersionIndex: 1442
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -903,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    rid: 7587688294792298523
+    rid: 7587688299832279050
   m_Size: {x: -0.05813651, y: 0.08240775, z: 0.122755766}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 1
@@ -915,7 +917,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7587688294792298523
+    - rid: 7587688299832279050
       type: {class: Prism, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!23 &6619494126196787065
 MeshRenderer:
@@ -980,6 +982,36 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.155052
   m_Center: {x: -0.028542401, y: 0.03, z: 0.06137784}
+--- !u!114 &8020842786491192883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619494126196787066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53340252188944dd283e5dc46ddaee00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {fileID: 4693518699346396704}
+  endPosition: {fileID: 3320019945381534099}
+--- !u!54 &5707686850327364694
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619494126196787066}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6619494126296292794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,10 +1131,49 @@ MonoBehaviour:
   dragPercentage: 0
   onDragStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8020842786491192883}
+        m_TargetAssemblyTypeName: SliderControl, Assembly-CSharp
+        m_MethodName: OnSlideStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDragEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8020842786491192883}
+        m_TargetAssemblyTypeName: SliderControl, Assembly-CSharp
+        m_MethodName: OnSlideStop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDragUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8020842786491192883}
+        m_TargetAssemblyTypeName: SliderControl, Assembly-CSharp
+        m_MethodName: UpdateSlider
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6619494126296542582
 GameObject:
   m_ObjectHideFlags: 0
@@ -12690,7 +12761,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1692
+  m_VersionIndex: 1701
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12708,7 +12779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    rid: 7587688234059563009
+    rid: 7587688299832279049
   m_Size: {x: 0.26, y: 0.07290965, z: 0.06}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 1
@@ -12720,7 +12791,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7587688234059563009
+    - rid: 7587688299832279049
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!23 &6619494126296542581
 MeshRenderer:

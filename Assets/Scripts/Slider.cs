@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SliderControl : MonoBehaviour
+public class Slider : MonoBehaviour
 {
 
     public Transform startPosition = null;
@@ -16,7 +16,7 @@ public class SliderControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void OnSlideStart()
     {
         meshRenderer.material.SetColor("_Color", Color.red);
     }
@@ -26,8 +26,9 @@ public class SliderControl : MonoBehaviour
         meshRenderer.material.SetColor("_Color", Color.white);
     }
 
-    public void UpdateSlider(float percentage)
+    public void UpdateSlider(float percent)
     {
-        transform.position = Vector3.Lerp(startPosition.position, endPosition.position, percentage);
+        transform.position = Vector3.Lerp(startPosition.position, endPosition.position, percent);
+        Debug.Log("UpdateSlider - percent: " + percent + "transform.position: " + transform.position);
     }
 }

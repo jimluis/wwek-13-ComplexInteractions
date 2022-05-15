@@ -16,7 +16,7 @@ public class Hand : MonoBehaviour
     public InputAction trackedAction = null;
     bool m_isCurrentlyTracked = false;
 
-    List<MeshRenderer> m_currentRenderers;
+    List<Renderer> m_currentRenderers = new List<Renderer>();
 
     Collider[] m_colliders = null;
     List<Collider>  colliderList = new List<Collider>();
@@ -56,13 +56,13 @@ public class Hand : MonoBehaviour
    public void Hide()
     {
         m_currentRenderers.Clear();
-        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
 
 
-        foreach(MeshRenderer renderer in renderers)
+        foreach(Renderer renderer2 in renderers)
         {
-            renderer.enabled = false;
-            m_currentRenderers.Add(renderer);
+            renderer2.enabled = false;
+            m_currentRenderers.Add(renderer2);
         }
 
         isHidden = true;
@@ -71,9 +71,9 @@ public class Hand : MonoBehaviour
 
     public void Show()
     {
-        foreach (MeshRenderer renderer in m_currentRenderers)
+        foreach (Renderer renderer2 in m_currentRenderers)
         {
-            renderer.enabled = true;
+            renderer2.enabled = true;
         }
 
         isHidden = false;
@@ -86,9 +86,9 @@ public class Hand : MonoBehaviour
             return;
 
         isCollisionEnabled = enabled;
-        foreach(Collider collider in m_colliders)
+        foreach(Collider collider2 in m_colliders)
         {
-            collider.enabled = isCollisionEnabled;
+            collider2.enabled = isCollisionEnabled;
         }
     }
 }

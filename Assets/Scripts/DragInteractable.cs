@@ -25,18 +25,20 @@ public class DragInteractable : XRBaseInteractable
     Coroutine m_drag = null;
 
     void StartDrag()
-    { 
-        if(m_drag != null)
+    {
+        Debug.Log("StartDrag");
+        if (m_drag != null)
         {
             StopCoroutine(m_drag);
         }
 
-        m_drag = StartCoroutine(m_drag);
+        m_drag = StartCoroutine(CalculateDrag());
         onDragStart?.Invoke();
     }
 
     void EndDrag()
     {
+        Debug.Log("EndDrag");
         if (m_drag != null)
         {
             StopCoroutine(m_drag);
@@ -56,7 +58,7 @@ public class DragInteractable : XRBaseInteractable
         return Mathf.Clamp01(Vector3.Dot(AV, AB) / Vector3.Dot(AB, AB));
     }
 
-    IEnumerable CalculateDrag()
+    IEnumerator CalculateDrag()
     {
         while(m_interactor != null)
         {
@@ -71,24 +73,27 @@ public class DragInteractable : XRBaseInteractable
 
             //reverse interpolate that position on the line to get a percentage of how far the drag has moved
             dragPercentage = InverseLerp(startDragPosition.localPosition, endDragPosition.localPosition, projectedPoint);
-
-            onDragUpdate?.Invoke(dragPercentage);
+            Debug.Log("dragPercentage >: "+ dragPercentage);
+            onDragUpdate.Invoke(dragPercentage);
             yield return null;
         }
 
 
     }
 
-    protected override void OnSelectEntered(XRBaseInteractor interactor)//(SelectEnterEventArgs args)
+    //protected override void OnSelectEntered(XRBaseInteractor interactor)//(SelectEnterEventArgs args)
+    protected override void OnSelectEntered(SelectEnterEventArgs interactor)
     {
-        //base.OnSelectEntered(args);
-        m_interactor = interactor;
+        Debug.Log("OnSelectEntered: " + interactor);
+        base.OnSelectEntered(interactor);
+        m_interactor = (UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor)interactor.interactorObject;
         StartDrag();
         base.OnSelectEntered(interactor);
     }
 
-    protected override void OnSelectExited(XRBaseInteractor interactor)//(SelectEnterEventArgs args)
+    protected override void OnSelectExited(XRBaseInteractor interactor)
     {
+        Debug.Log("OnSelectExited: " + interactor);
         //base.OnSelectEntered(args);
         EndDrag();
         m_interactor = null;
