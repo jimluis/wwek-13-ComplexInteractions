@@ -28,7 +28,8 @@ public class Slider : MonoBehaviour
 
     public void UpdateSlider(float percent)
     {
+        Debug.Log("UpdateSlider() - before percent: " + percent);
         transform.position = Vector3.Lerp(startPosition.position, endPosition.position, percent);
-        Debug.Log("UpdateSlider - percent: " + percent + "transform.position: " + transform.position);
+        Debug.Log("UpdateSlider() - percent: " + percent + " - transform.position: " + transform.position);
     }
 }

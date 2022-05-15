@@ -4,26 +4,32 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[Serializable]
-public class DragEvent : UnityEvent<float> { }
+//[Serializable]
+//public class DragEvent : UnityEvent<float> { }
 
 public class DragInteractable : XRBaseInteractable
 {
     public Transform startDragPosition = null;
     public Transform endDragPosition = null;
 
-    [HideInInspector]
-    public float dragPercentage = 0.0f;
+    //[HideInInspector]
+    //public float dragPercentage;
 
     protected XRBaseInteractor m_interactor = null;
 
     public UnityEvent onDragStart = new UnityEvent();
     public UnityEvent onDragEnd = new UnityEvent();
-    public DragEvent onDragUpdate = new DragEvent();
+    public DragEvent onDragUpdate; //new DragEvent();
 
+    //public delegate float UpdateDragDelegate(float val);
+    //public UpdateDragDelegate sliderControllUpdateDelegate;
 
     Coroutine m_drag = null;
 
+    //public DragInteractable()
+    //{
+    //    sliderControllUpdateDelegate
+    //}
     void StartDrag()
     {
         Debug.Log("StartDrag");
@@ -72,9 +78,9 @@ public class DragInteractable : XRBaseInteractable
             Vector3 projectedPoint = Vector3.Project(interactorLocalPosition, line.normalized);
 
             //reverse interpolate that position on the line to get a percentage of how far the drag has moved
-            dragPercentage = InverseLerp(startDragPosition.localPosition, endDragPosition.localPosition, projectedPoint);
-            Debug.Log("dragPercentage >: "+ dragPercentage);
-            onDragUpdate.Invoke(dragPercentage);
+            float percent = InverseLerp(startDragPosition.localPosition, endDragPosition.localPosition, projectedPoint);
+            Debug.Log("onDragUpdate: "+ onDragUpdate + " - percent : " + percent);
+            onDragUpdate?.Invoke(percent);
             yield return null;
         }
 

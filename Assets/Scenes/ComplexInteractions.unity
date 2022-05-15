@@ -1139,6 +1139,30 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 366137076}
+    - target: {fileID: 6261485754632008824, guid: 23b8f226034924740a95e850704277ba, type: 3}
+      propertyPath: onDragUpdate.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261485754632008824, guid: 23b8f226034924740a95e850704277ba, type: 3}
+      propertyPath: onDragUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261485754632008824, guid: 23b8f226034924740a95e850704277ba, type: 3}
+      propertyPath: onDragUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 590077773}
+    - target: {fileID: 6261485754632008824, guid: 23b8f226034924740a95e850704277ba, type: 3}
+      propertyPath: onDragUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261485754632008824, guid: 23b8f226034924740a95e850704277ba, type: 3}
+      propertyPath: onDragUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Slider, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261485754632008824, guid: 23b8f226034924740a95e850704277ba, type: 3}
+      propertyPath: onDragUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6619494126196787064, guid: 23b8f226034924740a95e850704277ba, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1149,7 +1173,7 @@ PrefabInstance:
       objectReference: {fileID: 1165728908}
     - target: {fileID: 6619494126196787071, guid: 23b8f226034924740a95e850704277ba, type: 3}
       propertyPath: m_VersionIndex
-      value: 1451
+      value: 1454
       objectReference: {fileID: 0}
     - target: {fileID: 6619494126296292794, guid: 23b8f226034924740a95e850704277ba, type: 3}
       propertyPath: m_Name
@@ -1209,10 +1233,21 @@ PrefabInstance:
       objectReference: {fileID: 702048548}
     - target: {fileID: 6619494126296542587, guid: 23b8f226034924740a95e850704277ba, type: 3}
       propertyPath: m_VersionIndex
-      value: 1710
+      value: 1713
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23b8f226034924740a95e850704277ba, type: 3}
+--- !u!114 &590077773 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8020842786491192883, guid: 23b8f226034924740a95e850704277ba, type: 3}
+  m_PrefabInstance: {fileID: 590077772}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53340252188944dd283e5dc46ddaee00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &651262090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,7 +1592,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47536
+  m_Name: pb_Mesh33536
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2098,7 +2133,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47830
+  m_Name: pb_Mesh33832
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
