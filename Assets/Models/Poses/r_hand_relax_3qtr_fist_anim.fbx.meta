@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: f0d22293dcfc9468a972d76eda6d7200
+guid: 9f69a2f511b944757a03dea749cfb163
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -7030686202310112615
-    second: l_hand_skeletal_lowres
+      74: 1827226128182048838
+    second: Take 001
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -100,7 +100,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

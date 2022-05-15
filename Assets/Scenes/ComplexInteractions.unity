@@ -854,6 +854,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -21.577
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: f0d22293dcfc9468a972d76eda6d7200, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 157381ef66b314df1a8a2be451a91dee, type: 2}
     - target: {fileID: 8555334649533000000, guid: f0d22293dcfc9468a972d76eda6d7200, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99905825
@@ -1088,7 +1092,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-41466
+  m_Name: pb_Mesh53790
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1345,7 +1349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6619494126296292795, guid: 23b8f226034924740a95e850704277ba, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6619494126296292795, guid: 23b8f226034924740a95e850704277ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1756,7 +1760,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35128
+  m_Name: pb_Mesh52404
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2008,6 +2012,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!95 &710468269 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: f0d22293dcfc9468a972d76eda6d7200, type: 3}
+  m_PrefabInstance: {fileID: 400151974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &740786847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,6 +2081,24 @@ MonoBehaviour:
       m_Action: Tracked
       m_Flags: 0
     m_Flags: 0
+  gripAction:
+    m_Name: Grip
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bd2407c2-663d-49e6-b4e2-ec6b0bb1b217
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 6123571e-ad20-45fd-94e9-8835c254ec0f
+      m_Path: <XRController>{LeftHand}/grip
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grip
+      m_Flags: 0
+    m_Flags: 0
+  handAnimator: {fileID: 710468269}
 --- !u!1 &892063725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,6 +2287,24 @@ MonoBehaviour:
       m_Action: Tracked
       m_Flags: 0
     m_Flags: 0
+  gripAction:
+    m_Name: Grip
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: cca90b56-a882-4a22-b6d0-a5555390c50b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 77ae57a7-731c-4ac3-9b53-fc1f5a1701a7
+      m_Path: <XRController>{RightHand}/grip
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grip
+      m_Flags: 0
+    m_Flags: 0
+  handAnimator: {fileID: 1337752559}
 --- !u!1 &1119474054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,7 +2342,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35424
+  m_Name: pb_Mesh52740
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2559,7 +2604,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-41448
+  m_Name: pb_Mesh53892
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2776,11 +2821,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: r_hand_skeletal_lowres
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 624a75a76c8ec456f84d6b788b71fde8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 09b3dcc6316f2451ab6486bcab7d9aeb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 624a75a76c8ec456f84d6b788b71fde8, type: 3}
 --- !u!4 &1337752558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 624a75a76c8ec456f84d6b788b71fde8, type: 3}
+  m_PrefabInstance: {fileID: 1337752557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1337752559 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 624a75a76c8ec456f84d6b788b71fde8, type: 3}
   m_PrefabInstance: {fileID: 1337752557}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1424080797 stripped
@@ -2943,19 +2997,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5822073954397342129, guid: 4b5c2e6cb51ab47ac96c431e8322e525, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7133151
       objectReference: {fileID: 0}
     - target: {fileID: 5822073954397342129, guid: 4b5c2e6cb51ab47ac96c431e8322e525, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5822073954397342129, guid: 4b5c2e6cb51ab47ac96c431e8322e525, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.70084345
       objectReference: {fileID: 0}
     - target: {fileID: 5822073954397342129, guid: 4b5c2e6cb51ab47ac96c431e8322e525, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5822073954397342129, guid: 4b5c2e6cb51ab47ac96c431e8322e525, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2963,7 +3017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5822073954397342129, guid: 4b5c2e6cb51ab47ac96c431e8322e525, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 88.989
       objectReference: {fileID: 0}
     - target: {fileID: 5822073954397342129, guid: 4b5c2e6cb51ab47ac96c431e8322e525, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
