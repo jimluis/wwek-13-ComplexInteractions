@@ -6,6 +6,7 @@ public class Lever : MonoBehaviour
 {
     public Transform startOrientation = null;
     public Transform endOrientation = null;
+    [SerializeField] Light light;
 
     MeshRenderer meshRenderer = null;
     // Start is called before the first frame update
@@ -29,5 +30,8 @@ public class Lever : MonoBehaviour
     {
         transform.rotation = Quaternion.Slerp(startOrientation.rotation, endOrientation.rotation, percent);
         Debug.Log("UpdateSlider() - percent: " + percent + " - transform.position: " + transform.position);
+
+        light.intensity = percent * 10;
+
     }
 }
